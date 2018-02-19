@@ -1,0 +1,100 @@
+// Pulled because not necessary
+// Cut from cJSONInterface .h and .cpp
+// Saving cJSON Root to RAM.
+cJSON* DeepCopyRoot(cJSON* oldRoot);
+cJSON* RecursiveArrayBuilder(cJSON* arrayObject);
+
+cJSON* DeepCopyRoot(cJSON* oldRoot)
+{
+	cJSON* newRoot = cJSON_CreateObject();
+
+	std::vector<cJSON*> storage = GetAllItemsFromObject(oldRoot);
+
+	for (unsigned int i = 0; i < storage.size(); i++)
+	{
+		switch (storage.at(i)->type)
+		{
+		case cJSON_NULL: // null object
+			break;
+		case cJSON_False:
+			cJSON_AddBoolToObject(newRoot, storage.at(i)->string, FALSE);
+			break;
+		case cJSON_True:
+			cJSON_AddBoolToObject(newRoot, storage.at(i)->string, TRUE);
+			break;
+		case cJSON_Number:
+			cJSON_AddNumberToObject(newRoot, storage.at(i)->string, storage.at(i)->valuedouble);
+			break;
+		case cJSON_String:
+			cJSON_AddStringToObject(newRoot, storage.at(i)->string, storage.at(i)->valuestring);
+			break;
+		case cJSON_Array:
+			cJSON* temp = RecursiveArrayBuilder(storage.at(i));
+
+			cJSON_AddItemToObject(newRoot, DeepCopyString(temp->string), temp); // must deep copy FINAL cJSON*->string char* values			
+			break;
+		}
+	}
+	return newRoot;
+}
+
+cJSON* RecursiveArrayBuilder(cJSON* arrayObject)
+{
+	cJSON* newArray = CreateArray(arrayObject->string);
+
+	/////////////////////////////////////////////
+
+	int	t_containerSize = cJSON_GetArraySize(arrayObject); // how many containers
+
+	std::vector<cJSON*> tempArray; // handles list arrays
+	for (int i = 0; i < t_containerSize; i++)
+	{
+		tempArray.push_back(cJSON_GetArrayItem(arrayObject, i)); // get each container
+	}
+	// parse a container	
+	for (unsigned int i = 0; i < tempArray.size(); i++)
+	{
+		cJSON* tempContainer = tempArray.at(i);
+
+		int t_arraySize = cJSON_GetArraySize(tempContainer); // how many objects inside
+
+		std::vector<cJSON*> storage;
+
+		for (int j = 0; j < t_arraySize; j++)
+		{
+			storage.push_back(cJSON_GetArrayItem(tempContainer, j)); // get each container
+		}
+
+		cJSON* newObject = cJSON_CreateObject(); // create container
+
+												 // parse an item
+		for (unsigned int j = 0; j < storage.size(); j++) // load container
+		{
+			switch (storage.at(j)->type)
+			{
+				break;
+			case cJSON_False:
+				cJSON_AddBoolToObject(newObject, storage.at(j)->string, FALSE); // may need to deep copy FINAL char* valuse
+				break;
+			case cJSON_True:
+				cJSON_AddBoolToObject(newObject, storage.at(j)->string, TRUE);
+				break;
+			case cJSON_Number:
+				cJSON_AddNumberToObject(newObject, storage.at(j)->string, storage.at(j)->valuedouble);
+				break;
+			case cJSON_String:
+				cJSON_AddStringToObject(newObject, storage.at(j)->string, storage.at(j)->valuestring);
+				break;
+			case cJSON_Array:
+				cJSON* temp = RecursiveArrayBuilder(storage.at(j));
+
+				cJSON_AddItemToObject(newObject, DeepCopyString(temp->string), temp); // add container object?
+																					  //delete temp->string; // cleanup
+				break;
+			}
+		}
+		cJSON_AddItemToArray(newArray, newObject);
+	}
+
+	return newArray;
+}

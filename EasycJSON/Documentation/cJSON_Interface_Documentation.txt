@@ -1,0 +1,27 @@
+// for information regarding JSON file structure please
+// see cJSON_FileReference.txt
+
+1.0 Opening a cJSON file for reading
+
+
+2.0 Accessing items inside a JSON file
+
+{
+	"Filename":	"TestFile1",
+	"GameSave":	[{
+			"Level":	2,
+			"CurrentHealth":	50
+		}],
+	"ShapeList":	[{
+			"RedShapes":	[{
+					"Shape":	"Triangle",
+					"Shape":	"Square",
+					"Shape":	"Circle"
+				}],
+			"BlueShapes":	[{
+					"Shape":	"Triangle",
+					"Shape":	"Square",
+					"Shape":	"Circle"
+				}]
+		}]
+}

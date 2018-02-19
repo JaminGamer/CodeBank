@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Libraries\imGUI">
+      <UniqueIdentifier>{3322f68e-af5b-493e-a51d-81efb412b509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Files">
+      <UniqueIdentifier>{6d3b8163-a09b-4ab0-8a40-75bc20b40098}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Library.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguicodeeditor.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguidock.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguifilesystem.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguilistview.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguinodegrapheditor.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguistring.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imguitabwindow.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\stb_rect_pack.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\stb_textedit.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\stb_truetype.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\utf8helper.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\dirent_portable.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imconfig.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imgui.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imgui_impl_glfw_gl3.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\imGUI\imgui_internal.h">
+      <Filter>Libraries\imGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\MyImGUI.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\NodeGraph.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\RenderedScene.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\SceneController.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\SceneExplorer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\CameraPanel.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\IconsFontAwesome.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\ImGUIStyles.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\ImGuiUtils.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\ImGUIWindow.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\MyImGUI\LightPanel.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Libraries\imGUI\imguidock.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imguifilesystem.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imguilistview.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imguinodegrapheditor.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imguistring.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imguitabwindow.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imgui.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imgui_demo.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imgui_draw.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imgui_impl_glfw_gl3.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imgui_node_graph_test.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\imGUI\imguicodeeditor.cpp">
+      <Filter>Libraries\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\MyImGUI.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\NodeGraph.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\RenderedScene.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\SceneController.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\SceneExplorer.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\CameraPanel.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\ImGUIStyles.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\ImGUIWindow.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\MyImGUI\LightPanel.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Library.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

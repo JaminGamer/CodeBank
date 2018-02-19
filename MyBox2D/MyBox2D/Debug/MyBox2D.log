@@ -1,0 +1,91 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  MyBox2D.cpp
+  Box2DWorld.cpp
+  Box2DDebugDraw.cpp
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(27): error C3861: 'blue_GetAttributePrefix': identifier not found
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(27): error C3861: 'DispStrCombine': identifier not found
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(27): error C2228: left of '.c_str' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(27): note: type is 'unknown-type'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(27): error C2198: 'PFNGLGETATTRIBLOCATIONPROC': too few arguments for call
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(34): error C2079: 'worldmat' uses undefined class 'MyMatrix'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(35): error C2228: left of '.SetIdentity' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(35): note: type is 'int'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(38): error C2228: left of '.Rotate' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(38): note: type is 'int'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(41): error C2664: 'void ShaderProgram::SetUniformMat4(const char *,const GLfloat *)': cannot convert argument 2 from 'int *' to 'const GLfloat *'
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(41): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(42): error C2664: 'void ShaderProgram::SetUniformMat4(const char *,const GLfloat *)': cannot convert argument 2 from 'MyMatrix *' to 'const GLfloat *'
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(42): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(43): error C2664: 'void ShaderProgram::SetUniformMat4(const char *,const GLfloat *)': cannot convert argument 2 from 'MyMatrix *' to 'const GLfloat *'
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(43): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(45): error C2065: 'Vector4': undeclared identifier
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(45): error C2146: syntax error: missing ';' before identifier 'color4'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(45): error C3861: 'color4': identifier not found
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): error C2065: 'color4': undeclared identifier
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): error C2228: left of '.x' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): note: type is 'unknown-type'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): error C2228: left of '.y' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): note: type is 'unknown-type'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): error C2228: left of '.z' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): note: type is 'unknown-type'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): error C2228: left of '.w' must have class/struct/union
+  c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): note: type is 'unknown-type'
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(46): error C2660: 'ShaderProgram::SetUniformFloat4': function does not take 1 arguments
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(72): error C2065: 'PI': undeclared identifier
+c:\users\aaron appel\desktop\mybox2d\mybox2d\box2ddebugdraw.cpp(87): error C2065: 'PI': undeclared identifier
+  Box2DContactListener.cpp
+  ShaderProgram.cpp
+c:\users\aaron appel\desktop\mybox2d\shaderprogram\shaderprogram.cpp(18): error C3861: 'LoadCompleteFile': identifier not found
+c:\users\aaron appel\desktop\mybox2d\shaderprogram\shaderprogram.cpp(19): error C3861: 'LoadCompleteFile': identifier not found
+  b2Rope.cpp
+  b2WorldCallbacks.cpp
+  b2World.cpp
+  b2Island.cpp
+  b2Fixture.cpp
+  b2ContactManager.cpp
+  b2Body.cpp
+  b2WheelJoint.cpp
+  b2WeldJoint.cpp
+  b2RopeJoint.cpp
+  b2RevoluteJoint.cpp
+  b2PulleyJoint.cpp
+  b2PrismaticJoint.cpp
+  b2MouseJoint.cpp
+  Generating Code...
+  Compiling...
+  b2MotorJoint.cpp
+  b2Joint.cpp
+  b2GearJoint.cpp
+  b2FrictionJoint.cpp
+  b2DistanceJoint.cpp
+  b2PolygonContact.cpp
+  b2PolygonAndCircleContact.cpp
+  b2EdgeAndPolygonContact.cpp
+  b2EdgeAndCircleContact.cpp
+  b2ContactSolver.cpp
+  b2Contact.cpp
+  b2CircleContact.cpp
+  b2ChainAndPolygonContact.cpp
+  b2ChainAndCircleContact.cpp
+  b2Timer.cpp
+  b2StackAllocator.cpp
+  b2Settings.cpp
+  b2Math.cpp
+  b2Draw.cpp
+  b2BlockAllocator.cpp
+  Generating Code...
+  Compiling...
+  b2TimeOfImpact.cpp
+  b2DynamicTree.cpp
+  b2Distance.cpp
+  b2Collision.cpp
+  b2CollidePolygon.cpp
+  b2CollideEdge.cpp
+  b2CollideCircle.cpp
+  b2BroadPhase.cpp
+  b2PolygonShape.cpp
+  b2EdgeShape.cpp
+  b2CircleShape.cpp
+  b2ChainShape.cpp
+  Generating Code...

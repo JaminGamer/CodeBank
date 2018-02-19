@@ -1,0 +1,24 @@
+﻿  Main.cpp
+c:\users\aaron appel\desktop\easyxinput\easyxinput\easyxinput\xinputinterface.h(124): warning C4251: 'XinputHandler::m_StickDeadZone': class 'Vector2' needs to have dll-interface to be used by clients of class 'XinputHandler'
+  c:\users\aaron appel\desktop\easyxinput\easyxinput\easyxinput\vector.h(14): note: see declaration of 'Vector2'
+c:\users\aaron appel\desktop\easyxinput\easyxinput\easyxinput\xinputinterface.h(131): warning C4251: 'XinputHandler::m_PlayerStates': class 'std::vector<XINPUT_STATE,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'XinputHandler'
+          with
+          [
+              _Ty=XINPUT_STATE
+          ]
+  c:\users\aaron appel\desktop\easyxinput\easyxinput\easyxinput\xinputinterface.h(131): note: see declaration of 'std::vector<XINPUT_STATE,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=XINPUT_STATE
+          ]
+c:\users\aaron appel\desktop\easyxinput\easyxinput\easyxinput\xinputinterface.h(132): warning C4251: 'XinputHandler::m_PreviousStates': class 'std::vector<XINPUT_STATE,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'XinputHandler'
+          with
+          [
+              _Ty=XINPUT_STATE
+          ]
+  c:\users\aaron appel\desktop\easyxinput\easyxinput\easyxinput\xinputinterface.h(131): note: see declaration of 'std::vector<XINPUT_STATE,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=XINPUT_STATE
+          ]
+  TestGame.vcxproj -> C:\Users\Aaron Appel\Desktop\EasyXinput\EasyXinput\Debug\TestGame.exe
