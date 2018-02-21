@@ -10,6 +10,7 @@ class GameObject;
 
 typedef void (Scene::*UpdateFunc)(double deltatime); // Scene pause
 
+// TODO: Create derived classes for scenes like SplashScreen, GameScene, etc
 class Scene // Abstract class
 {
 public:
