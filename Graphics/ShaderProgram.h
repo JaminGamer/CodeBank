@@ -1,5 +1,5 @@
-#ifndef __SHADERPROGRAM_H__
-#define __SHADERPROGRAM_H__
+#ifndef _ShaderProgram_H_
+#define _ShaderProgram_H_
 
 // This class requires access to OpenGL functions.
 // https ://stackoverflow.com/questions/440144/in-opengl-is-there-a-way-to-get-a-list-of-all-uniforms-attribs-used-by-a-shade
@@ -8,14 +8,15 @@ class ShaderProgram
 {
 public:
 	ShaderProgram(const char* vertFileDir, const char* fragFileDir, const char* geoFileDir);
-	ShaderProgram();
+    ShaderProgram(eShaderTypes type);
+    ShaderProgram();
 	~ShaderProgram();
 
 	/* Setup */
-	bool Init(eShaderTypes type);
 	bool Init(const char* vertFileDir, const char* fragFileDir, const char* geoFileDir);
-	// TODO: Recompile just recompiles using current strings
-	GLuint ReCompileShader(GLenum shaderType, const char* shaderString);
+	
+	GLuint ReCompile1Shader(GLenum shaderType, const char* shaderString); // recompile 1 shader by type (vert, frag, geo)
+    GLuint ReCompileShader(); // recompile shader 
 
 	/* Utility */
 	void SetShaderStringData(GLenum shaderType, const char* shaderString);
@@ -29,7 +30,7 @@ public:
 	/* Texture setup */
 	void SetupTextures(GLuint textures[], int numTextures);
 
-	/* uniform value assignment */
+	/* Uniform value assignment */
 	// int
 	void SetUniformInt1(const char* name, int value);
 	void SetUniformInt2(const char* name, int value1, int value2);
@@ -55,8 +56,9 @@ private:
 	GLuint m_ProgramHandle = 0;
 
 	/* Functionality */
+    bool BuildShaderProgram(); // return BuildSucceeded == true
 	GLuint CompileShader(GLenum shaderType, const char* shaderString);
 	GLuint LinkShaders(GLuint vert, GLuint frag, GLuint geo);
 };
 
-#endif //__SHADERPROGRAM_H__
+#endif //_ShaderProgram_H_

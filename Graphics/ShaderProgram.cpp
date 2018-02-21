@@ -5,6 +5,11 @@ ShaderProgram::ShaderProgram(const char* vertFileDir, const char* fragFileDir, c
 	Init(vertFileDir, fragFileDir, geoFileDir);
 }
 
+ShaderProgram::ShaderProgram(eShaderTypes type)
+{
+    Init(type);
+}
+
 ShaderProgram::ShaderProgram()
 {
 }
@@ -25,27 +30,10 @@ bool ShaderProgram::Init(const char* vertFileDir, const char* fragFileDir, const
 		m_GeoString = LoadCompleteFile(geoFileDir, 0);
 	// otherwise loaded by ShaderFactory
 
-	// compile shaders	
-	if(m_VertString) m_VertShaderHandle = CompileShader(GL_VERTEX_SHADER, m_VertString);
-	if(m_FragString) m_FragShaderHandle = CompileShader(GL_FRAGMENT_SHADER, m_FragString);
-	if(m_GeoString) m_GeoShaderHandle = CompileShader(GL_GEOMETRY_SHADER, m_GeoString);
-
-	if (m_VertShaderHandle == 0 && m_FragShaderHandle == 0 && m_GeoShaderHandle == 0) // null handles
-	{
-		CleanUp(); // deallocate memory
-		assert(0); // DEBUG:
-		return false;
-	}
-
-	// link shaders
-	// TODO: Can you even make a vert or frag only shader? Do I need asserts for that?
-	m_ProgramHandle = LinkShaders(m_VertShaderHandle, m_FragShaderHandle, m_GeoShaderHandle);
-	if (m_ProgramHandle == 0) { return false; } // check if null program
-
-	return true;
+    return BuildShaderProgram();
 }
 // Returns new shader handle is successful, else 0
-GLuint ShaderProgram::ReCompileShader(GLenum shaderType, const char* shaderString)
+GLuint ShaderProgram::ReCompile1Shader(GLenum shaderType, const char* shaderString)
 {
 	// TODO: Finish writing function. Handle all shader types.
 	// May want to recompile one shader and link it to update changes made or a new shader altogether.
@@ -71,6 +59,13 @@ GLuint ShaderProgram::ReCompileShader(GLenum shaderType, const char* shaderStrin
 	}
 
 	return result;
+}
+
+GLuint ShaderProgram::ReCompileShader()
+{
+    CleanUp(); // TODO: evaluate which shaders to keep based on changes to strings or handles
+
+    BuildShaderProgram(); // build using new string data
 }
 
 void SetShaderStringData(GLenum shaderType, const char* shaderString)
@@ -124,6 +119,29 @@ void ShaderProgram::CleanUp()
 	m_FragShaderHandle = 0;
 	m_GeoShaderHandle = 0;
 	m_ProgramHandle = 0;
+}
+
+bool BuildShaderProgram()
+{
+    // shader strings should have been loaded by Init(), ShaderFactory, or SetStringData()
+    // compile shaders
+    if (m_VertString) m_VertShaderHandle = CompileShader(GL_VERTEX_SHADER, m_VertString);
+    if (m_FragString) m_FragShaderHandle = CompileShader(GL_FRAGMENT_SHADER, m_FragString);
+    if (m_GeoString) m_GeoShaderHandle = CompileShader(GL_GEOMETRY_SHADER, m_GeoString);
+
+    if (m_VertShaderHandle == 0 && m_FragShaderHandle == 0 && m_GeoShaderHandle == 0) // null handles
+    {
+        CleanUp(); // deallocate memory
+        assert(0); // DEBUG:
+        return false;
+    }
+
+    // link shaders
+    // TODO: Can you even make a vert or frag only shader? Do I need asserts for that?
+    m_ProgramHandle = LinkShaders(m_VertShaderHandle, m_FragShaderHandle, m_GeoShaderHandle);
+    if (m_ProgramHandle == 0) { return false; } // check if null program
+
+    return true; // shader built properly
 }
 // Returns new shader handle is successful, else 0
 GLuint ShaderProgram::CompileShader(GLenum shaderType, const char* shaderString)
