@@ -1,5 +1,0 @@
-﻿  Skipping... (no relevant changes detected)
-  Main.cpp
-  FrameBufferObject.cpp
-  CallBackFunctions.cpp
-LINK : fatal error LNK1104: cannot open file 'MyGLFW.lib'
