@@ -12,22 +12,45 @@
 class Timer
 {
 public:
-	Timer();
+    Timer();
     virtual ~Timer();
 
-	void Reset(double a_TimeLength); // start
-	bool Tick(double a_Deltatime); // update
+    void Reset(double a_TimeLength) // start
+    {
+        m_ElapsedTime = 0.0f;
+        m_TimeLength = a_TimeLength;
+        m_HasCompleted = false;
+    }
 
-	bool HasCompleted() { return m_HasCompleted; };
-	// void SetCallBack(CallBack* callback) { m_CallBack = callback;};
-	// void CallBack(...); // build a universal function callback pointer if possible
+    bool Tick(double a_Deltatime) // update
+    {
+        if (m_HasCompleted == false)
+        {
+            m_ElapsedTime += a_Deltatime;
+            CheckIfCompleted();
+        }
+        return m_HasCompleted;
+    }
+
+    bool HasCompleted() { return m_HasCompleted; };
+    // void SetCallBack(CallBack* callback) { m_CallBack = callback;};
+    // void CallBack(...); // build a universal function callback pointer if possible
 private:
-	void CheckIfCompleted();
-	bool m_HasCompleted = false;
-	float m_ElapsedTime = 0.0f;
-	float m_TimeLength = FLT_MAX;
+    void CheckIfCompleted()
+    {
+        if (m_ElapsedTime >= m_TimeLength)
+        {
+            m_HasCompleted = true;
+            // m_CallBack->Trigger();
+        }
+        else
+            m_HasCompleted = false;
+    }
+    bool m_HasCompleted = false;
+    float m_ElapsedTime = 0.0f;
+    float m_TimeLength = FLT_MAX;
 
-	// CallBack* m_CallBack = nullptr;
+    // CallBack* m_CallBack = nullptr;
 };
 
 #endif //__TIMER_H__

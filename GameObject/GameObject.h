@@ -6,7 +6,7 @@ class Component;
 class Routine;
 class GameObject;
 
-class BLUE_Box_API GameObject
+class GameObject
 {
 public:
 	GameObject(Scene* scene);
