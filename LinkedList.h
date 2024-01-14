@@ -1,5 +1,4 @@
-#ifndef __MyLinkedList_H_
-#define __MyLinkedList_H_
+#pragma once
 
 // LinearList<> is a dynamic container for storing objects.
 // It behaves similar to std::vector<> but does not store data
@@ -33,11 +32,11 @@ struct _ListNode
 // 2WayNodeList, Line2List, DynamicLinkList, AaronsListSomething...
 //
 template <class LIST_OBJECT_TYPE>
-class MyLinkedList
+class LinkedList
 {
 public:
-	MyLinkedList();
-	~MyLinkedList();
+	LinkedList();
+	~LinkedList();
 
 	LIST_OBJECT_TYPE Front();
 	LIST_OBJECT_TYPE Back();
@@ -77,12 +76,12 @@ private:
 };
 
 template <class LIST_OBJECT_TYPE>
-MyLinkedList<LIST_OBJECT_TYPE>::MyLinkedList()
+LinkedList<LIST_OBJECT_TYPE>::LinkedList()
 {
 }
 
 template <class LIST_OBJECT_TYPE>
-MyLinkedList<LIST_OBJECT_TYPE>::~MyLinkedList()
+LinkedList<LIST_OBJECT_TYPE>::~LinkedList()
 {
 	// Do not delete objects in Destructor.
 	// Stack variables will try to delete their values when
@@ -94,19 +93,19 @@ MyLinkedList<LIST_OBJECT_TYPE>::~MyLinkedList()
 }
 
 template <class LIST_OBJECT_TYPE>
-LIST_OBJECT_TYPE MyLinkedList<LIST_OBJECT_TYPE>::Front()
+LIST_OBJECT_TYPE LinkedList<LIST_OBJECT_TYPE>::Front()
 {
 	return m_Head->value;
 }
 
 template <class LIST_OBJECT_TYPE>
-LIST_OBJECT_TYPE MyLinkedList<LIST_OBJECT_TYPE>::Back()
+LIST_OBJECT_TYPE LinkedList<LIST_OBJECT_TYPE>::Back()
 {
 	return _NodeAtIndex(m_Count - 1)->value;
 }
 
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::PushFront(LIST_OBJECT_TYPE item)
+void LinkedList<LIST_OBJECT_TYPE>::PushFront(LIST_OBJECT_TYPE item)
 {
 	// add to front
 	_ListNode<LIST_OBJECT_TYPE>* t_NewNode = new _ListNode<LIST_OBJECT_TYPE>(item);
@@ -118,7 +117,7 @@ void MyLinkedList<LIST_OBJECT_TYPE>::PushFront(LIST_OBJECT_TYPE item)
 }
 
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::PushBack(LIST_OBJECT_TYPE item)
+void LinkedList<LIST_OBJECT_TYPE>::PushBack(LIST_OBJECT_TYPE item)
 {
 	// add to end
 	_ListNode<LIST_OBJECT_TYPE>* t_Node = new _ListNode<LIST_OBJECT_TYPE>(item);
@@ -136,7 +135,7 @@ void MyLinkedList<LIST_OBJECT_TYPE>::PushBack(LIST_OBJECT_TYPE item)
 	_PrintValues(); // test
 }
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::PushBack(LIST_OBJECT_TYPE* items, int size)
+void LinkedList<LIST_OBJECT_TYPE>::PushBack(LIST_OBJECT_TYPE* items, int size)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -145,7 +144,7 @@ void MyLinkedList<LIST_OBJECT_TYPE>::PushBack(LIST_OBJECT_TYPE* items, int size)
 }
 
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::InsertBefore(int index, LIST_OBJECT_TYPE item)
+void LinkedList<LIST_OBJECT_TYPE>::InsertBefore(int index, LIST_OBJECT_TYPE item)
 {
 	_ListNode<LIST_OBJECT_TYPE>* t_LaterValue = _NodeAtIndex(index); // get later node
 	_ListNode<LIST_OBJECT_TYPE>* t_NewNode = new _ListNode<LIST_OBJECT_TYPE>(item); // create new node
@@ -164,7 +163,7 @@ void MyLinkedList<LIST_OBJECT_TYPE>::InsertBefore(int index, LIST_OBJECT_TYPE it
 }
 
 template <class LIST_OBJECT_TYPE>
-LIST_OBJECT_TYPE MyLinkedList<LIST_OBJECT_TYPE>::Withdraw(int index)
+LIST_OBJECT_TYPE LinkedList<LIST_OBJECT_TYPE>::Withdraw(int index)
 {
 	_ListNode<LIST_OBJECT_TYPE>* t_DeadNode = _NodeAtIndex(index);
 	_ListNode<LIST_OBJECT_TYPE>* t_Front = t_DeadNode->prev;
@@ -191,7 +190,7 @@ LIST_OBJECT_TYPE MyLinkedList<LIST_OBJECT_TYPE>::Withdraw(int index)
 }
 
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::Remove(int index)
+void LinkedList<LIST_OBJECT_TYPE>::Remove(int index)
 {
 	if (m_Count == 0) { return; }
 	_ListNode<LIST_OBJECT_TYPE>* t_DeadNode = _NodeAtIndex(index);
@@ -228,18 +227,18 @@ void MyLinkedList<LIST_OBJECT_TYPE>::Remove(int index)
 }
 
 template <class LIST_OBJECT_TYPE>
-LIST_OBJECT_TYPE MyLinkedList<LIST_OBJECT_TYPE>::At(int index)
+LIST_OBJECT_TYPE LinkedList<LIST_OBJECT_TYPE>::At(int index)
 {
 	return _NodeAtIndex(index)->value;
 }
 
 template <class LIST_OBJECT_TYPE>
-int MyLinkedList<LIST_OBJECT_TYPE>::Size()
+int LinkedList<LIST_OBJECT_TYPE>::Size()
 {
 	return m_Count;
 }
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::Clear()
+void LinkedList<LIST_OBJECT_TYPE>::Clear()
 {
 	for (int i = 0; i < m_Count; i++)
 	{
@@ -248,7 +247,7 @@ void MyLinkedList<LIST_OBJECT_TYPE>::Clear()
 }
 // private
 template <class LIST_OBJECT_TYPE>
-_ListNode<LIST_OBJECT_TYPE>* MyLinkedList<LIST_OBJECT_TYPE>::_NodeAtIndex(int index)
+_ListNode<LIST_OBJECT_TYPE>* LinkedList<LIST_OBJECT_TYPE>::_NodeAtIndex(int index)
 {
 	if (index > m_Count - 1) { OutputMessage("\nLinear2LinkedList: At(index) index out of range!\n"); assert(0); } // out of range
 	_ListNode<LIST_OBJECT_TYPE>* t_Iterator = m_Head;
@@ -261,7 +260,7 @@ _ListNode<LIST_OBJECT_TYPE>* MyLinkedList<LIST_OBJECT_TYPE>::_NodeAtIndex(int in
 	return t_Iterator;
 }
 template <class LIST_OBJECT_TYPE>
-void MyLinkedList<LIST_OBJECT_TYPE>::_PrintValues()
+void LinkedList<LIST_OBJECT_TYPE>::_PrintValues()
 {
 	_ListNode<LIST_OBJECT_TYPE>* t_Iterator = m_Head;
 	OutputMessage("\nList Values: ");
@@ -273,11 +272,9 @@ void MyLinkedList<LIST_OBJECT_TYPE>::_PrintValues()
 }
 
 template <class LIST_OBJECT_TYPE>
-LIST_OBJECT_TYPE* MyLinkedList<LIST_OBJECT_TYPE>::CreateArray()
+LIST_OBJECT_TYPE* LinkedList<LIST_OBJECT_TYPE>::CreateArray()
 {
 	// !beware the memory!
 	LIST_OBJECT_TYPE* t_Array = new LIST_OBJECT_TYPE[m_Count]; // unhandled allocation
 	return t_Array;
 }
-
-#endif // __MyLinkedList_H_
